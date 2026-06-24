@@ -1,0 +1,12 @@
+🎯 Baseline accuracy: 0.818  (evaluated on 33/33 parseable responses)
+
+Per-class metrics (baseline):
+              precision    recall  f1-score   support
+
+    analysis       0.84      1.00      0.91        16
+    hot_take       0.86      0.67      0.75         9
+    reaction       0.71      0.62      0.67         8
+
+    accuracy                           0.82        33
+   macro avg       0.80      0.76      0.78        33
+weighted avg       0.82      0.82      0.81        33
