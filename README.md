@@ -4,6 +4,8 @@
 
 TakeMeter classifies r/formula1 comments into three categories — `analysis`, `hot_take`, and `reaction` — using a DistilBERT model fine-tuned on 218 human-annotated examples. A zero-shot Groq baseline (llama-3.3-70b-versatile) provides a comparison point. The project explores whether a small fine-tuned model can match or exceed a large general-purpose LLM on a community-specific discourse quality task.
 
+Demo: To be added
+
 ---
 
 ## Community
@@ -109,6 +111,10 @@ The fine-tuned model improved `hot_take` F1 from 0.75 → 0.78 and `reaction` F1
 | **True: `reaction`** | 3 | 0 | 5 |
 
 The dominant off-diagonal pattern is the first column: 5 non-analysis examples were predicted as analysis (2 hot_takes + 3 reactions). No examples were confused across the analysis↔reaction boundary directly. The model never predicted `reaction` for a non-reaction example (precision 1.00), but missed 3 of 8 actual reactions.
+
+![Confusion Matrix](https://github.com/hkumar30/ai201-project3-takemeter/blob/main/confusion_matrix.png)
+
+Figure 2. Confusion Matrix
 
 ---
 
