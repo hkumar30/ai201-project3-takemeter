@@ -77,6 +77,30 @@ r/formula1 is one of the largest sports communities on Reddit (~7M members), wit
 
 ---
 
+### Difficult Annotation Cases (From Dataset)
+
+These are three real comments from the collected dataset that required careful judgment during annotation.
+
+**Case 1 — Stat-decorated hot take (labeled `hot_take`)**
+
+> "y'all have incredibly short term memories. ill agree that singapore has its years of being difficult to watch but one race without SC in the 15 years its been run doesnt warrant it being taken off the calendar. loads of great years in between"
+
+*Why it was hard:* The "15 years" figure looks like evidence. But it is one-dimensional — the author names the span without any breakdown of race quality, SC frequency by year, or comparison to other street circuits. The stat is used to shame the reader ("short term memories"), not to reason through whether Singapore should stay on the calendar. Remove the number and the argument doesn't collapse; it was decorative from the start. **Labeled `hot_take`.**
+
+**Case 2 — Reaction with embedded observation (labeled `reaction`)**
+
+> "i can't believe how entertaining the race actually was compared to previous years.. the softer tyres added strategy options and SC in the last ten laps was fun.. Max's move was awesome i didn't even see it coming until he already almost passed oscar. i really hope rbr actually made huge a step forward so that we can have a proper 3 way fight"
+
+*Why it was hard:* The post mentions tyre compounds and strategy — superficially analytical. But these are listed as part of an enthusiastic experience report, not as part of a structured argument. The comment is event-triggered (a specific race), expressive throughout, and would not exist without the triggering moment. The hope for a "3 way fight" is a wish, not a claim. **Labeled `reaction`.**
+
+**Case 3 — Bold prediction with mild supporting observation (labeled `hot_take`)**
+
+> "Piastri is not that great yet on tire management. And hey listen that's just about the only negative thing I can say about the guy because he's a prodigy for real. I honestly believe the kid is gonna be a WDC within 5 years. But his weakness has a couple times now been managing his tires in a more tactical race."
+
+*Why it was hard:* The "weakness" claim is grounded in multiple races ("a couple times now"), which could look like evidence. But no specific race, lap time, or stint data is cited — "a couple times" is a vague assertion. The WDC-within-5-years prediction carries no championship math or historical precedent. The post makes a confident claim and softens it with praise, but the reasoning structure doesn't survive cross-examination. **Labeled `hot_take`.**
+
+---
+
 ## Data Collection Plan
 
 **Source:** r/formula1 comments collected via the PullPush API (`api.pullpush.io`), which archives Reddit data and allows filtering by subreddit, date range, and score.
