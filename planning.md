@@ -127,5 +127,11 @@ A macro F1 of 0.70 on a three-class subjective task with ~36 test examples is a 
 
 ## AI Tool Plan
 
-**Milestone 1 — Label stress-testing:**
-I will give Claude the three label definitions and the decision rules, then present 10–15 real r/formula1 comments and ask it to classify each and explain its reasoning. Where Claude's classification disagrees with mine, I will investigate whether the label boundary needs sharpening or whether the example is a genuine edge case. This is label stress-testing, not annotation — the goal is to find holes in the definitions before committing to labeling 200 examples.
+**Label stress-testing:**
+I will give Claude the three label definitions and both decision rules, then ask it to generate 8–10 posts that sit at the `analysis` / `hot_take` boundary and 5 that sit at the `reaction` / `hot_take` boundary. If Claude produces posts I cannot cleanly classify using the existing decision rules, the definitions need tightening — I will revise them before annotating any examples. This step happens before any data collection.
+
+**Annotation assistance:**
+I will use Claude to pre-label each collected comment by providing the full label definitions and decision rules in the system prompt and asking for exactly one of `analysis`, `hot_take`, or `reaction` with a one-sentence rationale. I will review every pre-label myself, overriding any I disagree with. Disagreements are logged. The dataset CSV will include a `claude_prelabel` column and a `human_label` column — the human label is always the ground truth. Pre-labeling will be disclosed in the README and AI Usage section of the final submission.
+
+**Failure analysis:**
+After evaluation, I will give Claude the complete list of wrong predictions — each formatted as `[true: X | predicted: Y] text` — and ask it to group them into patterns rather than list them individually. I will specifically ask: "Do errors cluster around a particular label pair? A particular post length? A particular linguistic pattern (e.g., posts that cite exactly one stat)?" I will then manually verify each claimed pattern by reading the underlying examples myself before including any pattern in the evaluation report.
