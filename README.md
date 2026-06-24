@@ -4,7 +4,7 @@
 
 TakeMeter classifies r/formula1 comments into three categories — `analysis`, `hot_take`, and `reaction` — using a DistilBERT model fine-tuned on 218 human-annotated examples. A zero-shot Groq baseline (llama-3.3-70b-versatile) provides a comparison point. The project explores whether a small fine-tuned model can match or exceed a large general-purpose LLM on a community-specific discourse quality task.
 
-Demo: To be added
+Demo: https://www.youtube.com/watch?v=POaLVYOa24c
 
 ---
 
